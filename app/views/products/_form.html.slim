@@ -6,7 +6,7 @@
     = f.input :price
     = f.input :style
     = f.input :description
-    = f.input :product_image_id
+    = f.input :product_image, as: :attachment, direct: true, presigned: true
 
   .form-actions
     = f.button :submit

@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
 
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
@@ -8,14 +7,17 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem "refile", require: "refile/rails"
-gem "refile-mini_magick"
+gem 'refile', require: 'refile/rails'
+gem 'refile-mini_magick'
 gem 'foundation-rails', '~> 5.5'
 gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'devise'
+gem 'refile-s3'
+gem 'aws-sdk', '~> 2'
 
 group :development do
   gem 'rubocop', require: false
@@ -25,12 +27,12 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'hub', :require=>nil
+  gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
+  gem 'rb-fchange', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false
   gem 'spring-commands-rspec'
 end
 
@@ -39,6 +41,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :test do

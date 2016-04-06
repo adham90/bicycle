@@ -14,7 +14,7 @@ p
   = @product.description
 p
   strong Product image:
-  = @product.product_image_id
+  = image_tag attachment_url(@product, :product_image, :fill, 300, 300, format: "jpg")
 
 = link_to 'Edit', edit_product_path(@product)
 '|
