@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.4'
 
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
@@ -9,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'refile', require: 'refile/rails'
 gem 'refile-mini_magick'
-gem 'foundation-rails', '~> 5.5'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'high_voltage'
 gem 'pg'
 gem 'puma'
@@ -18,6 +19,11 @@ gem 'slim-rails'
 gem 'devise'
 gem 'refile-s3'
 gem 'aws-sdk', '~> 2'
+gem 'has_scope'
+gem 'friendly_id', '~> 5.1.0'
+gem 'money-rails'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'rubocop', require: false

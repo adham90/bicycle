@@ -1,29 +1,39 @@
-h1 Listing products
+.row
+  .col-md-3
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title filter
+      .panel-body
+        = form_tag products_path, :method => 'get', class: 'form-horizontal' do
+          .col-xs-12
+            .form-group
+              label name
+              br
+              = text_field_tag :by_name, params[:by_name], class: "form-control"
+              br
+              label style
+              br
+              = select_tag :by_style, options_for_select(Style.all.collect{ |s| [s.name, s.id] }), class: "form-control"
+              br
+              label max price
+              br
+              = text_field_tag "by_price[max]", params[:by_price].try(:[], :max), class: "form-control"
+              br
+              label min price
+              br
+              = text_field_tag "by_price[min]", params[:by_price].try(:[], :min), class: "form-control"
+              br
+              br
+              = submit_tag "Search", class:"btn btn-default"
 
-table
-  thead
-    tr
-      th Name
-      th Price
-      th Style
-      th Description
-      th Product image
-      th
-      th
-      th
+  .col-md-9
+    - @products.each_slice(3) do |products|
+      .row
+        - products.each do |product|
+          .col-md-4
+            .product
+              .image_wrapper
+                = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg", fallback: 'fallback.png')
+              h2 = link_to product.name, product
+    = will_paginate @products, renderer: BootstrapPagination::Rails
 
-  tbody
-    - @products.each do |product|
-      tr
-        td = product.name
-        td = product.price
-        td = product.style
-        td = product.description
-        td = product.product_image_id
-        td = link_to 'Show', product
-        td = link_to 'Edit', edit_product_path(product)
-        td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Product', new_product_path

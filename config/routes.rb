@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :styles
-  devise_for :users
+  devise_for :users, skip: [:registrations]
   resources :products
-  root to: 'visitors#index'
+  root to: 'products#index'
 end
