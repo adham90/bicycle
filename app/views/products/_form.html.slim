@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :price
-    = f.input :style
+    = f.association :style
     = f.input :description
     = f.input :product_image, as: :attachment, direct: true, presigned: true
 

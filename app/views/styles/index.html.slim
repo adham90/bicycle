@@ -1,0 +1,21 @@
+h1 Listing styles
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @styles.each do |style|
+      tr
+        td = style.name
+        td = link_to 'Show', style
+        td = link_to 'Edit', edit_style_path(style)
+        td = link_to 'Destroy', style, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Style', new_style_path

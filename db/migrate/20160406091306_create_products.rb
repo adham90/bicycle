@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :style
       t.text :description
       t.string :product_image_id
-
+      t.references :style, index: true
       t.timestamps null: false
     end
   end
