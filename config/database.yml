@@ -11,7 +11,7 @@ test:
   pool:     5
 
 production:
-  adapter:  postgresql
+  adapter: postgresql
   encoding: unicode
   pool:     5
   database: <%= ENV['RDS_DB_NAME'] %>
