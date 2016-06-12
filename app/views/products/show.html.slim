@@ -8,6 +8,7 @@
         h3= humanized_money_with_symbol @product.price
         p.description= @product.description
         - if user_signed_in?
+          p= @product.cout
           .btn.btn-default= link_to 'Edit', edit_product_path(@product)
           .btn.btn-default= link_to 'delete', @product, method: :delete
 

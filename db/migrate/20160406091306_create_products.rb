@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.money :price
       t.string :style
+      t.integer :cout, default: 0
       t.text :description
       t.string :product_image_id
       t.references :style, index: true

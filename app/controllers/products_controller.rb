@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    cout = @product.cout 
+    cout = cout + 1
+    @product.cout = cout
+    @product.save
   end
 
   # GET /products/new
